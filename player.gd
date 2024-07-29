@@ -51,7 +51,3 @@ func _physics_process(delta):
 		pass
 		$AnimatedSprite2D.play("idle")
 		$AnimatedSprite2D.stop()
-	
-	print("Life: " + str(Global.life))
-	print("Dead: " + str(Global.dead))
-	print("Can_move: " + str(Global.can_move))

@@ -9,6 +9,7 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	$Control/LifeBar.value = Global.life
+	$Control/Label.text = str(Global.life)
 	if Global.dead:
 		$Gameover.visible = true
 	

@@ -154,6 +154,16 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
+[node name="Label" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = 225.0
+offset_top = 18.0
+offset_right = 269.0
+offset_bottom = 62.0
+theme_override_fonts/font = ExtResource("4_ak3h1")
+theme_override_font_sizes/font_size = 75
+text = "100"
+
 [node name="LifeBar" type="TextureProgressBar" parent="Control"]
 layout_mode = 1
 offset_left = 24.0
@@ -195,7 +205,7 @@ layer_1/tile_data = PackedInt32Array(65540, 786432, 4, 65541, 786432, 4, 65542, 
 position = Vector2(224, 416)
 scale = Vector2(4, 4)
 sprite_frames = SubResource("SpriteFrames_18a13")
-frame_progress = 0.536256
+frame_progress = 0.372593
 
 [node name="Title" type="Label" parent="Gameover"]
 layout_mode = 1
