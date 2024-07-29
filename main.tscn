@@ -683,6 +683,9 @@ speed = 150.0
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 zoom = Vector2(3, 3)
+position_smoothing_enabled = true
+position_smoothing_speed = 15.0
+rotation_smoothing_enabled = true
 
 [node name="Snake" parent="." node_paths=PackedStringArray("player") instance=ExtResource("4_j65jd")]
 position = Vector2(34, -28)

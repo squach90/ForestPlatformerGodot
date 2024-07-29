@@ -7,7 +7,7 @@ var is_jumping = false
 
 #TODO: Add music
 
-func _physics_process(delta):
+func _process(delta):
 	if not is_on_floor():
 		$AnimatedSprite2D.play("jump")
 		velocity.y += gravity * delta

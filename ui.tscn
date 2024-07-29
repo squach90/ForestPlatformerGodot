@@ -205,7 +205,7 @@ layer_1/tile_data = PackedInt32Array(65540, 786432, 4, 65541, 786432, 4, 65542, 
 position = Vector2(224, 416)
 scale = Vector2(4, 4)
 sprite_frames = SubResource("SpriteFrames_18a13")
-frame_progress = 0.372593
+frame_progress = 0.176694
 
 [node name="Title" type="Label" parent="Gameover"]
 layout_mode = 1

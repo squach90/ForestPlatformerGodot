@@ -15,7 +15,7 @@ func _ready():
 	start_position = position
 
 # Fonction appelée à chaque frame
-func _physics_process(delta):
+func _process(delta):
 	$AnimatedSprite2D.play("default")
 	# Déplacement de l'ennemi
 	velocity = Vector2(speed * direction, 0)

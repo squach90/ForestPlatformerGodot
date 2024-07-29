@@ -43,7 +43,7 @@ animations = [{
 size = Vector2(18, 14.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_syvfd"]
-size = Vector2(15, 7.5)
+size = Vector2(16, 7.5)
 
 [node name="Snake" type="CharacterBody2D"]
 script = ExtResource("1_ux08p")
