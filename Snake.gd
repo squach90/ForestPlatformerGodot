@@ -37,7 +37,8 @@ func _process(delta):
 
 func _on_area_2d_body_entered(body):
 	if body.name == "Player":
-		Global.life -= 75
+		if !Global.invinsible:
+			Global.life -= 75
 		#TODO: Add music
 
 
