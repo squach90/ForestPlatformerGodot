@@ -1,0 +1,70 @@
+[gd_scene load_steps=10 format=3 uid="uid://dtagooedk5neo"]
+
+[ext_resource type="Script" path="res://Snake.gd" id="1_ux08p"]
+[ext_resource type="Texture2D" uid="uid://6yfao5uff3oc" path="res://Assets/Sprite/Plateforme forêt personnages.png" id="2_qqhgy"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mh2fk"]
+atlas = ExtResource("2_qqhgy")
+region = Rect2(0, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tmlm2"]
+atlas = ExtResource("2_qqhgy")
+region = Rect2(32, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_13vpv"]
+atlas = ExtResource("2_qqhgy")
+region = Rect2(64, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2mcfm"]
+atlas = ExtResource("2_qqhgy")
+region = Rect2(96, 96, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_oymiu"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mh2fk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tmlm2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_13vpv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2mcfm")
+}],
+"loop": true,
+"name": &"default",
+"speed": 4.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_25uec"]
+size = Vector2(18, 14.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_syvfd"]
+size = Vector2(15, 7.5)
+
+[node name="Snake" type="CharacterBody2D"]
+script = ExtResource("1_ux08p")
+speed = 50
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_oymiu")
+frame = 1
+frame_progress = 0.902568
+
+[node name="Collider" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Collider"]
+position = Vector2(0, 9.25)
+shape = SubResource("RectangleShape2D_25uec")
+
+[node name="DeathPoint" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DeathPoint"]
+position = Vector2(0, 1.75)
+shape = SubResource("RectangleShape2D_syvfd")
+
+[connection signal="body_entered" from="Collider" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="DeathPoint" to="." method="_on_death_point_body_entered"]

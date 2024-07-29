@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://beqpambeq6sor"]
+
+[ext_resource type="Script" path="res://echelle.gd" id="1_0i8dr"]
+[ext_resource type="Texture2D" uid="uid://g3w1g6wfiqu6" path="res://Assets/Sprite/Échelle_bas.png" id="1_yne3f"]
+[ext_resource type="Texture2D" uid="uid://cxc7yx700xi66" path="res://Assets/Sprite/Échelle_Haut.png" id="2_8iggj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rwqjn"]
+size = Vector2(12, 24)
+
+[node name="Echelle" type="Area2D"]
+script = ExtResource("1_0i8dr")
+
+[node name="ÉchelleBas" type="Sprite2D" parent="."]
+position = Vector2(1, 6)
+texture = ExtResource("1_yne3f")
+
+[node name="ÉchelleHaut" type="Sprite2D" parent="."]
+position = Vector2(1, -6)
+texture = ExtResource("2_8iggj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, 0)
+shape = SubResource("RectangleShape2D_rwqjn")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

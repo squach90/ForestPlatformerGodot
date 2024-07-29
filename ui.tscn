@@ -1,0 +1,253 @@
+[gd_scene load_steps=13 format=3 uid="uid://xv0fy53ockdd"]
+
+[ext_resource type="Script" path="res://ui.gd" id="1_mc0gc"]
+[ext_resource type="Texture2D" uid="uid://chwimic85ga4k" path="res://Assets/Sprite/health_bar_decoration.png" id="1_qfimf"]
+[ext_resource type="Texture2D" uid="uid://lljjo0myhv7b" path="res://Assets/Sprite/health_bar.png" id="2_gqi53"]
+[ext_resource type="FontFile" uid="uid://b3x4uicymb0hf" path="res://Assets/Fonts/game_over.ttf" id="4_ak3h1"]
+[ext_resource type="Texture2D" uid="uid://cp2j8jjtm3mb" path="res://Assets/Tilemap/Platformer forest.png" id="4_r14ar"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_w43jt"]
+texture = ExtResource("4_r14ar")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+6:0/0 = 0
+7:0/0 = 0
+8:0/0 = 0
+9:0/0 = 0
+10:0/0 = 0
+11:0/0 = 0
+12:0/0 = 0
+13:0/0 = 0
+14:0/0 = 0
+15:0/0 = 0
+16:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+7:1/0 = 0
+8:1/0 = 0
+9:1/0 = 0
+10:1/0 = 0
+11:1/0 = 0
+12:1/0 = 0
+13:1/0 = 0
+14:1/0 = 0
+15:1/0 = 0
+16:1/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+7:2/0 = 0
+8:2/0 = 0
+9:2/0 = 0
+10:2/0 = 0
+11:2/0 = 0
+12:2/0 = 0
+13:2/0 = 0
+14:2/0 = 0
+15:2/0 = 0
+16:2/0 = 0
+3:3/0 = 0
+4:3/0 = 0
+5:3/0 = 0
+7:3/0 = 0
+8:3/0 = 0
+9:3/0 = 0
+10:3/0 = 0
+11:3/0 = 0
+12:3/0 = 0
+13:3/0 = 0
+14:3/0 = 0
+15:3/0 = 0
+16:3/0 = 0
+3:4/0 = 0
+4:4/0 = 0
+5:4/0 = 0
+7:4/0 = 0
+8:4/0 = 0
+9:4/0 = 0
+10:4/0 = 0
+11:4/0 = 0
+12:4/0 = 0
+13:4/0 = 0
+14:4/0 = 0
+15:4/0 = 0
+16:4/0 = 0
+3:5/0 = 0
+4:5/0 = 0
+7:5/0 = 0
+8:5/0 = 0
+9:5/0 = 0
+10:5/0 = 0
+11:5/0 = 0
+12:5/0 = 0
+13:5/0 = 0
+14:5/0 = 0
+15:5/0 = 0
+16:5/0 = 0
+3:6/0 = 0
+4:6/0 = 0
+7:6/0 = 0
+8:6/0 = 0
+9:6/0 = 0
+10:6/0 = 0
+11:6/0 = 0
+12:6/0 = 0
+13:6/0 = 0
+14:6/0 = 0
+15:6/0 = 0
+16:6/0 = 0
+2:7/0 = 0
+3:7/0 = 0
+4:7/0 = 0
+5:7/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_o01nv"]
+sources/0 = SubResource("TileSetAtlasSource_w43jt")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fdcxd"]
+atlas = ExtResource("4_r14ar")
+region = Rect2(224, 64, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wut6m"]
+atlas = ExtResource("4_r14ar")
+region = Rect2(240, 64, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uibu2"]
+atlas = ExtResource("4_r14ar")
+region = Rect2(256, 64, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_18a13"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fdcxd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wut6m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uibu2")
+}],
+"loop": true,
+"name": &"default",
+"speed": 3.0
+}]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1o8dr"]
+
+[node name="UI" type="CanvasLayer"]
+script = ExtResource("1_mc0gc")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="LifeBar" type="TextureProgressBar" parent="Control"]
+layout_mode = 1
+offset_left = 24.0
+offset_top = 16.0
+offset_right = 91.0
+offset_bottom = 34.0
+scale = Vector2(3, 3)
+value = 100.0
+texture_under = ExtResource("1_qfimf")
+texture_progress = ExtResource("2_gqi53")
+texture_progress_offset = Vector2(14, 0)
+
+[node name="Gameover" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="BG" type="ColorRect" parent="Gameover"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.905882)
+
+[node name="TileMap" type="TileMap" parent="Gameover"]
+scale = Vector2(4, 4)
+tile_set = SubResource("TileSet_o01nv")
+format = 2
+layer_0/tile_data = PackedInt32Array(524290, 524288, 5, 524292, 524288, 5, 589826, 524288, 6, 589828, 524288, 6, 393219, 983040, 2)
+layer_1/tile_data = PackedInt32Array(65540, 786432, 4, 65541, 786432, 4, 65542, 786432, 4, 65543, 786432, 4, 65544, 786432, 4, 65545, 786432, 4, 65546, 786432, 4, 65547, 786432, 4, 65548, 786432, 4, 65549, 786432, 4, 65550, 851968, 4, 65539, 720896, 4, 196611, 720896, 6, 196612, 786432, 6, 196613, 786432, 6, 196614, 786432, 6, 196615, 786432, 6, 196616, 786432, 6, 196617, 786432, 6, 196621, 786432, 6, 196620, 786432, 6, 196619, 786432, 6, 196618, 786432, 6, 196622, 851968, 6, 131076, 786432, 5, 131077, 786432, 5, 131078, 786432, 5, 131079, 786432, 5, 131080, 786432, 5, 131081, 786432, 5, 131082, 786432, 5, 131083, 786432, 5, 131084, 786432, 5, 131085, 786432, 5, 131075, 720896, 5, 131086, 851968, 5, 6, 983040, 5, 13, 917504, 5, 8, 1048576, 6, 4, 1048576, 6, 262149, 917504, 805306374, 262157, 917504, 536870918, 10, 917504, 0, 524288, 524288, 5, 589824, 720896, 1, 524289, 524288, 5, 589825, 720896, 1, 524290, 655360, 3, 589826, 655360, 3, 524291, 720896, 1, 589827, 720896, 1, 524292, 786432, 3, 589828, 786432, 3, 524293, 524288, 5, 589829, 720896, 1, 524294, 524288, 5, 589830, 524288, 6, 524295, 524288, 5, 589831, 720896, 1, 524296, 524288, 5, 589832, 720896, 1, 524297, 524288, 5, 589833, 720896, 1, 524298, 524288, 5, 589834, 524288, 6, 524299, 524288, 5, 589835, 720896, 1, 524300, 524288, 5, 589836, 524288, 6, 524301, 524288, 5, 589837, 524288, 6, 524302, 524288, 5, 589838, 720896, 1, 524303, 524288, 5, 589839, 720896, 1, 524304, 524288, 5, 589840, 524288, 6, 524305, 524288, 5, 589841, 524288, 6, 458754, 655360, 2, 458755, 720896, 2, 458756, 786432, 2, 393218, 917504, 2, 393220, 1048576, 2)
+
+[node name="Coffre" type="AnimatedSprite2D" parent="Gameover"]
+position = Vector2(224, 416)
+scale = Vector2(4, 4)
+sprite_frames = SubResource("SpriteFrames_18a13")
+frame_progress = 0.536256
+
+[node name="Title" type="Label" parent="Gameover"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -341.5
+offset_top = -265.0
+offset_right = 341.5
+offset_bottom = -95.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("4_ak3h1")
+theme_override_font_sizes/font_size = 300
+text = "GAME OVER"
+
+[node name="RetryBtn" type="Button" parent="Gameover"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -66.5
+offset_top = -0.5
+offset_right = 66.5
+offset_bottom = 64.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.937255, 0.937255, 0.937255, 1)
+theme_override_fonts/font = ExtResource("4_ak3h1")
+theme_override_font_sizes/font_size = 100
+theme_override_styles/normal = SubResource("StyleBoxEmpty_1o8dr")
+text = "RETRY"
+flat = true
+
+[node name="QuitBtn" type="Button" parent="Gameover"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -49.5
+offset_top = 79.5
+offset_right = 49.5
+offset_bottom = 144.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("4_ak3h1")
+theme_override_font_sizes/font_size = 100
+text = "QUIT"
+flat = true
