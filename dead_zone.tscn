@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://gv43oaso6lyt"]
+
+[ext_resource type="Script" path="res://dead_zone.gd" id="1_wssop"]
+
+[sub_resource type="Gradient" id="Gradient_1344n"]
+offsets = PackedFloat32Array(0.839286, 0.994048)
+colors = PackedColorArray(0.152941, 0.121569, 0.203922, 1, 0, 0, 0, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_l476n"]
+gradient = SubResource("Gradient_1344n")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wdub2"]
+size = Vector2(181, 273)
+
+[node name="DeadZone" type="Area2D"]
+script = ExtResource("1_wssop")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 256.0
+offset_bottom = 184.0
+rotation = -1.5708
+texture = SubResource("GradientTexture1D_l476n")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(92.5, -138.5)
+shape = SubResource("RectangleShape2D_wdub2")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
