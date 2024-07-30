@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://xv0fy53ockdd"]
+[gd_scene load_steps=18 format=3 uid="uid://xv0fy53ockdd"]
 
 [ext_resource type="Script" path="res://ui.gd" id="1_mc0gc"]
 [ext_resource type="Texture2D" uid="uid://chwimic85ga4k" path="res://Assets/Sprite/health_bar_decoration.png" id="1_qfimf"]
@@ -9,6 +9,112 @@
 [ext_resource type="FontFile" uid="uid://jjljxhwqjqmy" path="res://Assets/Fonts/pixelated.ttf" id="6_1j86v"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gk3u6"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ahwxp"]
+texture = ExtResource("4_r14ar")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+6:0/0 = 0
+7:0/0 = 0
+8:0/0 = 0
+9:0/0 = 0
+10:0/0 = 0
+11:0/0 = 0
+12:0/0 = 0
+13:0/0 = 0
+14:0/0 = 0
+15:0/0 = 0
+16:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+7:1/0 = 0
+8:1/0 = 0
+9:1/0 = 0
+10:1/0 = 0
+11:1/0 = 0
+12:1/0 = 0
+13:1/0 = 0
+14:1/0 = 0
+15:1/0 = 0
+16:1/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+7:2/0 = 0
+8:2/0 = 0
+9:2/0 = 0
+10:2/0 = 0
+11:2/0 = 0
+12:2/0 = 0
+13:2/0 = 0
+14:2/0 = 0
+15:2/0 = 0
+16:2/0 = 0
+3:3/0 = 0
+4:3/0 = 0
+5:3/0 = 0
+7:3/0 = 0
+8:3/0 = 0
+9:3/0 = 0
+10:3/0 = 0
+11:3/0 = 0
+12:3/0 = 0
+13:3/0 = 0
+14:3/0 = 0
+15:3/0 = 0
+16:3/0 = 0
+3:4/0 = 0
+4:4/0 = 0
+5:4/0 = 0
+7:4/0 = 0
+8:4/0 = 0
+9:4/0 = 0
+10:4/0 = 0
+11:4/0 = 0
+12:4/0 = 0
+13:4/0 = 0
+14:4/0 = 0
+15:4/0 = 0
+16:4/0 = 0
+3:5/0 = 0
+4:5/0 = 0
+7:5/0 = 0
+8:5/0 = 0
+9:5/0 = 0
+10:5/0 = 0
+11:5/0 = 0
+12:5/0 = 0
+13:5/0 = 0
+14:5/0 = 0
+15:5/0 = 0
+16:5/0 = 0
+3:6/0 = 0
+4:6/0 = 0
+7:6/0 = 0
+8:6/0 = 0
+9:6/0 = 0
+10:6/0 = 0
+11:6/0 = 0
+12:6/0 = 0
+13:6/0 = 0
+14:6/0 = 0
+15:6/0 = 0
+16:6/0 = 0
+2:7/0 = 0
+3:7/0 = 0
+4:7/0 = 0
+5:7/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_rk4qv"]
+sources/0 = SubResource("TileSetAtlasSource_ahwxp")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_w43jt"]
 texture = ExtResource("4_r14ar")
@@ -220,6 +326,85 @@ theme_override_font_sizes/font_size = 40
 text = "COIN: 10"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="TitleScreen" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TileMap" type="TileMap" parent="TitleScreen"]
+scale = Vector2(3, 3)
+tile_set = SubResource("TileSet_rk4qv")
+format = 2
+layer_0/tile_data = PackedInt32Array(65539, 720896, 4, 131075, 720896, 5, 196611, 720896, 6, 65540, 786432, 4, 131076, 786432, 5, 196612, 786432, 6, 65541, 786432, 4, 131077, 786432, 5, 196613, 786432, 6, 65542, 786432, 4, 131078, 786432, 5, 196614, 786432, 6, 65543, 786432, 4, 131079, 786432, 5, 196615, 786432, 6, 65544, 786432, 4, 131080, 786432, 5, 196616, 786432, 6, 65545, 786432, 4, 131081, 786432, 5, 196617, 786432, 6, 65546, 786432, 4, 131082, 786432, 5, 196618, 786432, 6, 65547, 786432, 4, 131083, 786432, 5, 196619, 786432, 6, 65548, 786432, 4, 131084, 786432, 5, 196620, 786432, 6, 65549, 786432, 4, 131085, 786432, 5, 196621, 786432, 6, 65550, 786432, 4, 131086, 786432, 5, 196622, 786432, 6, 65551, 786432, 4, 131087, 786432, 5, 196623, 786432, 6, 65552, 786432, 4, 131088, 786432, 5, 196624, 786432, 6, 65553, 786432, 4, 131089, 786432, 5, 196625, 786432, 6, 65554, 786432, 4, 131090, 786432, 5, 196626, 786432, 6, 65556, 851968, 4, 131092, 851968, 5, 196628, 851968, 6, 65555, 786432, 4, 131091, 786432, 5, 196627, 786432, 6, 524287, 131072, 0, 589823, 131072, 1, 655359, 131072, 2, 983039, 131072, 7, 458752, 196608, 0, 524288, 196608, 1, 589824, 196608, 2, 655360, 196608, 3, 720896, 196608, 4, 786432, 196608, 5, 851968, 196608, 6, 917504, 196608, 7, 458753, 262144, 0, 524289, 262144, 1, 589825, 262144, 2, 655361, 262144, 3, 720897, 262144, 4, 786433, 262144, 5, 851969, 262144, 6, 917505, 262144, 7, 458754, 327680, 0, 524290, 327680, 1, 655362, 327680, 3, 720898, 327680, 4, 917506, 327680, 7, 458755, 393216, 0, 458776, 131072, 268435456, 458775, 196608, 268435456, 458774, 262144, 268435456, 458773, 327680, 268435456, 458772, 393216, 268435456, 524312, 131072, 268435457, 524311, 196608, 268435457, 524310, 262144, 268435457, 524309, 327680, 268435457, 589848, 131072, 268435458, 589847, 196608, 268435458, 589846, 262144, 268435458, 655383, 196608, 268435459, 655382, 262144, 268435459, 655381, 327680, 268435459, 720919, 196608, 268435460, 720918, 262144, 268435460, 720917, 327680, 268435460, 786455, 196608, 268435461, 786454, 262144, 268435461, 851991, 196608, 268435462, 851990, 262144, 268435462, 917528, 131072, 268435463, 917527, 196608, 268435463, 917526, 262144, 268435463, 917525, 327680, 268435463)
+layer_1/tile_data = PackedInt32Array()
+
+[node name="Title" type="Label" parent="TitleScreen"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -376.0
+offset_top = -262.5
+offset_right = 376.0
+offset_bottom = -149.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 50
+theme_override_fonts/font = ExtResource("6_1j86v")
+theme_override_font_sizes/font_size = 100
+text = "ForestPlatformer"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PlayBtn" type="Button" parent="TitleScreen"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -63.0
+offset_top = -31.0
+offset_right = 63.0
+offset_bottom = 63.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 30
+theme_override_fonts/font = ExtResource("4_ak3h1")
+theme_override_font_sizes/font_size = 150
+text = "Play"
+flat = true
+
+[node name="OptionBtn" type="Button" parent="TitleScreen"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -63.0
+offset_top = 41.0
+offset_right = 63.0
+offset_bottom = 135.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 30
+theme_override_fonts/font = ExtResource("4_ak3h1")
+theme_override_font_sizes/font_size = 150
+text = "Option"
+flat = true
 
 [node name="Gameover" type="Control" parent="."]
 visible = false
