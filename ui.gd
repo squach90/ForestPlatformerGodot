@@ -10,6 +10,7 @@ func _ready():
 func _process(delta):
 	$Control/LifeBar.value = Global.life
 	$Control/Label.text = str(Global.life)
+	$Control/CoinPanel/TextValue.text = "COIN: " + str(Global.coin)
 	if Global.dead:
 		$Gameover.visible = true
 	

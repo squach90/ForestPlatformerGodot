@@ -24,7 +24,6 @@ func _process(delta):
 		
 	if Input.is_action_just_pressed("K"):
 		Global.life += 75
-
 	
 	if Global.life >= 26:
 		modulate = Color(1, 1, 1, 1)

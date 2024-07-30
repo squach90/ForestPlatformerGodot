@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://byjgam8rsw1fv"]
+[gd_scene load_steps=9 format=3 uid="uid://byjgam8rsw1fv"]
 
 [ext_resource type="Texture2D" uid="uid://cp2j8jjtm3mb" path="res://Assets/Tilemap/Platformer forest.png" id="1_ibqob"]
 [ext_resource type="PackedScene" uid="uid://c2ycq7v0tymej" path="res://player.tscn" id="2_q8yuv"]
 [ext_resource type="PackedScene" uid="uid://xv0fy53ockdd" path="res://ui.tscn" id="3_v0gbd"]
 [ext_resource type="PackedScene" uid="uid://dtagooedk5neo" path="res://snake.tscn" id="4_j65jd"]
+[ext_resource type="PackedScene" uid="uid://ja4rxb7t3ys7" path="res://coin.tscn" id="5_gp0e6"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5e0o7"]
 texture = ExtResource("1_ibqob")
@@ -692,3 +693,6 @@ position = Vector2(34, -28)
 player = NodePath("../Player")
 patrol_width = 50
 start_position = Vector2(0, 20)
+
+[node name="Coin" parent="." instance=ExtResource("5_gp0e6")]
+position = Vector2(38, -113)

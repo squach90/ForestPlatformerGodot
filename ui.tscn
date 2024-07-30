@@ -1,10 +1,14 @@
-[gd_scene load_steps=13 format=3 uid="uid://xv0fy53ockdd"]
+[gd_scene load_steps=16 format=3 uid="uid://xv0fy53ockdd"]
 
 [ext_resource type="Script" path="res://ui.gd" id="1_mc0gc"]
 [ext_resource type="Texture2D" uid="uid://chwimic85ga4k" path="res://Assets/Sprite/health_bar_decoration.png" id="1_qfimf"]
 [ext_resource type="Texture2D" uid="uid://lljjo0myhv7b" path="res://Assets/Sprite/health_bar.png" id="2_gqi53"]
 [ext_resource type="FontFile" uid="uid://b3x4uicymb0hf" path="res://Assets/Fonts/game_over.ttf" id="4_ak3h1"]
 [ext_resource type="Texture2D" uid="uid://cp2j8jjtm3mb" path="res://Assets/Tilemap/Platformer forest.png" id="4_r14ar"]
+[ext_resource type="Texture2D" uid="uid://26xiy2y7eyn1" path="res://Assets/Sprite/Coin1.png" id="5_hgeso"]
+[ext_resource type="FontFile" uid="uid://jjljxhwqjqmy" path="res://Assets/Fonts/pixelated.ttf" id="6_1j86v"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gk3u6"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_w43jt"]
 texture = ExtResource("4_r14ar")
@@ -175,6 +179,47 @@ value = 100.0
 texture_under = ExtResource("1_qfimf")
 texture_progress = ExtResource("2_gqi53")
 texture_progress_offset = Vector2(14, 0)
+
+[node name="CoinPanel" type="Panel" parent="Control"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -216.0
+offset_top = 6.0
+offset_right = -23.0
+offset_bottom = 76.0
+grow_horizontal = 0
+theme_override_styles/panel = SubResource("StyleBoxEmpty_gk3u6")
+
+[node name="CoinImg" type="TextureRect" parent="Control/CoinPanel"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -20.0
+offset_right = 40.0
+offset_bottom = 20.0
+grow_vertical = 2
+texture = ExtResource("5_hgeso")
+
+[node name="TextValue" type="Label" parent="Control/CoinPanel"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -40.0
+offset_top = -11.5
+offset_bottom = 11.5
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("6_1j86v")
+theme_override_font_sizes/font_size = 40
+text = "COIN: 10"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Gameover" type="Control" parent="."]
 visible = false
