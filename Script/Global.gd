@@ -7,3 +7,7 @@ var can_move = true
 var invinsible = false
 var blink_interval_global = 1.0  # Temps de clignotement global
 var coin = 0
+
+func _process(delta):
+	if life > 100:
+		life = 100
