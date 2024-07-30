@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://byjgam8rsw1fv"]
+[gd_scene load_steps=13 format=3 uid="uid://byjgam8rsw1fv"]
 
 [ext_resource type="Texture2D" uid="uid://cp2j8jjtm3mb" path="res://Assets/Tilemap/Platformer forest.png" id="1_ibqob"]
 [ext_resource type="PackedScene" uid="uid://c2ycq7v0tymej" path="res://player.tscn" id="2_q8yuv"]
@@ -8,6 +8,7 @@
 [ext_resource type="Script" path="res://MainMusic.gd" id="5_8dyyw"]
 [ext_resource type="PackedScene" uid="uid://ja4rxb7t3ys7" path="res://coin.tscn" id="5_gp0e6"]
 [ext_resource type="PackedScene" uid="uid://gv43oaso6lyt" path="res://dead_zone.tscn" id="6_0iihx"]
+[ext_resource type="AudioStream" uid="uid://dfx24w0t3nfey" path="res://Assets/Music/Coin pickup sound.mp3" id="6_qcmqo"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5e0o7"]
 texture = ExtResource("1_ibqob")
@@ -696,6 +697,10 @@ stream = ExtResource("4_ts5tg")
 volume_db = -6.169
 autoplay = true
 script = ExtResource("5_8dyyw")
+
+[node name="CoinSound" type="AudioStreamPlayer2D" parent="Player"]
+unique_name_in_owner = true
+stream = ExtResource("6_qcmqo")
 
 [node name="Snake" parent="." node_paths=PackedStringArray("player") instance=ExtResource("4_j65jd")]
 position = Vector2(34, -28)

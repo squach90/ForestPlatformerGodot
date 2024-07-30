@@ -5,5 +5,6 @@ func _ready():
 
 func _on_body_entered(body):
 	if body.name == "Player":
+		%CoinSound.play()
 		Global.coin += 1
 		queue_free()
