@@ -13,6 +13,9 @@ var is_blinking = false
 #TODO: Add music
 
 func _process(delta):
+	
+	if Input.is_action_pressed("K"):
+		print(Global.life)
 	if not is_on_floor():
 		$AnimatedSprite2D.play("jump")
 		velocity.y += gravity * delta
@@ -22,9 +25,6 @@ func _process(delta):
 	else:
 		is_jumping = false
 		
-	if Input.is_action_just_pressed("K"):
-		Global.life += 75
-	
 	if Global.life >= 26:
 		modulate = Color(1, 1, 1, 1)
 		Global.invinsible = false

@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://byjgam8rsw1fv"]
+[gd_scene load_steps=15 format=3 uid="uid://byjgam8rsw1fv"]
 
 [ext_resource type="Texture2D" uid="uid://cp2j8jjtm3mb" path="res://Assets/Tilemap/Platformer forest.png" id="1_ibqob"]
 [ext_resource type="PackedScene" uid="uid://c2ycq7v0tymej" path="res://player.tscn" id="2_q8yuv"]
@@ -9,6 +9,8 @@
 [ext_resource type="PackedScene" uid="uid://ja4rxb7t3ys7" path="res://coin.tscn" id="5_gp0e6"]
 [ext_resource type="PackedScene" uid="uid://gv43oaso6lyt" path="res://dead_zone.tscn" id="6_0iihx"]
 [ext_resource type="AudioStream" uid="uid://dfx24w0t3nfey" path="res://Assets/Music/Coin pickup sound.mp3" id="6_qcmqo"]
+[ext_resource type="AudioStream" uid="uid://bmf3hjgespr3e" path="res://Assets/Music/Zelda Get Heart.wav" id="7_7bb3p"]
+[ext_resource type="PackedScene" uid="uid://d3s645v135oik" path="res://heart.tscn" id="10_yr36h"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5e0o7"]
 texture = ExtResource("1_ibqob")
@@ -701,6 +703,11 @@ script = ExtResource("5_8dyyw")
 [node name="CoinSound" type="AudioStreamPlayer2D" parent="Player"]
 unique_name_in_owner = true
 stream = ExtResource("6_qcmqo")
+volume_db = -10.0
+
+[node name="HeartSound" type="AudioStreamPlayer2D" parent="Player"]
+unique_name_in_owner = true
+stream = ExtResource("7_7bb3p")
 
 [node name="Snake" parent="." node_paths=PackedStringArray("player") instance=ExtResource("4_j65jd")]
 position = Vector2(34, -28)
@@ -714,3 +721,6 @@ position = Vector2(38, -113)
 [node name="DeadZone" parent="." instance=ExtResource("6_0iihx")]
 visible = false
 position = Vector2(-193, 356)
+
+[node name="Heart" parent="." instance=ExtResource("10_yr36h")]
+position = Vector2(65, -89)
