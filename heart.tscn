@@ -18,7 +18,8 @@ animations = [{
 radius = 6.0
 
 [sub_resource type="Gradient" id="Gradient_dn6e0"]
-colors = PackedColorArray(1, 0.35944, 0.270517, 1, 0, 0, 0, 1)
+offsets = PackedFloat32Array(0, 0.505952, 0.994048, 1)
+colors = PackedColorArray(1, 0.360784, 0.262745, 0.768627, 0.882353, 0.133333, 0, 1, 0.05833, 0.00873993, 6.10261e-07, 1, 0, 0, 0, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_524qx"]
 gradient = SubResource("Gradient_dn6e0")

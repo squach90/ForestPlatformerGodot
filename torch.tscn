@@ -55,11 +55,11 @@ animations = [{
 }]
 
 [node name="Torch" type="PointLight2D"]
-color = Color(0.867604, 0.447747, 5.77569e-07, 1)
+color = Color(1, 0.612213, 0.325781, 1)
 texture = ExtResource("1_ym0uj")
 texture_scale = 0.5
 script = ExtResource("2_v85kn")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_k85am")
-frame_progress = 0.637806
+frame_progress = 0.0979012

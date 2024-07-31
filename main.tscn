@@ -669,11 +669,10 @@ sources/1 = SubResource("TileSetAtlasSource_qvb0s")
 [sub_resource type="Environment" id="Environment_yfdxq"]
 background_mode = 3
 glow_enabled = true
-glow_levels/2 = 0.16
 glow_levels/3 = 0.0
-glow_levels/4 = 5.0
+glow_levels/4 = 6.17
 glow_levels/5 = 0.0
-glow_bloom = 0.05
+glow_bloom = 0.01
 glow_blend_mode = 0
 fog_light_energy = 4.14
 fog_height_density = 16.0
@@ -761,9 +760,3 @@ position = Vector2(-193, 356)
 
 [node name="Heart" parent="." instance=ExtResource("10_yr36h")]
 position = Vector2(65, -89)
-
-[node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
-position = Vector2(15, -126)
-color = Color(0.032877, 0.00712998, 0.171308, 1)
-energy = 0.68
-max_distance = 1000.0
