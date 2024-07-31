@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://cxotyqayx7hk6"]
+
+[sub_resource type="Gradient" id="Gradient_lj3ej"]
+offsets = PackedFloat32Array(0, 0.64881, 1)
+colors = PackedColorArray(0.0705882, 0.0588235, 0.121569, 1, 0.117647, 0.341176, 0.415686, 1, 0.349935, 0.721427, 0.851628, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_342km"]
+gradient = SubResource("Gradient_lj3ej")
+fill_from = Vector2(1, 1)
+
+[node name="WaterLight" type="PointLight2D"]
+color = Color(0.117647, 0.341176, 0.415686, 1)
+texture = SubResource("GradientTexture2D_342km")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://d3s645v135oik"]
+[gd_scene load_steps=7 format=3 uid="uid://d3s645v135oik"]
 
 [ext_resource type="Script" path="res://heart.gd" id="1_jm71y"]
 [ext_resource type="Texture2D" uid="uid://bmt1bhotmjgtm" path="res://Assets/Sprite/heart pixel art 16x16.png" id="2_xm60h"]
@@ -17,6 +17,14 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_w1udh"]
 radius = 6.0
 
+[sub_resource type="Gradient" id="Gradient_dn6e0"]
+colors = PackedColorArray(1, 0.35944, 0.270517, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_524qx"]
+gradient = SubResource("Gradient_dn6e0")
+fill = 1
+fill_from = Vector2(0.474138, 0.547414)
+
 [node name="Heart" type="Area2D"]
 script = ExtResource("1_jm71y")
 
@@ -27,5 +35,9 @@ sprite_frames = SubResource("SpriteFrames_pdmh8")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_w1udh")
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+scale = Vector2(0.375, 0.375)
+texture = SubResource("GradientTexture2D_524qx")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
